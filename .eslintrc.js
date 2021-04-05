@@ -11,5 +11,7 @@ module.exports = {
 		ecmaVersion: 12,
 	},
 	plugins: ['react'],
-	rules: {},
+	rules: {
+		'import/prefer-default-export': 'off',
+	},
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo1-removebg-preview.png';
 
 const Navbar = () => (
 	<>
@@ -9,8 +10,7 @@ const Navbar = () => (
 					<div className="main-responsive-menu">
 						<div className="logo">
 							<Link to="/">
-								{/* <img src="assets/img/logo.png" alt="logo" /> */}
-								<h1>Logo</h1>
+								<img src={logo} alt="logo" />
 							</Link>
 						</div>
 					</div>
@@ -20,8 +20,9 @@ const Navbar = () => (
 				<div className="container">
 					<nav className="navbar navbar-expand-md navbar-light">
 						<Link className="navbar-brand" to="/">
-							{/* <img src="assets/img/logo.png" alt="image" /> */}
-							<h1>Logo</h1>
+							<div className="logo">
+								<img src={logo} alt="logo" />
+							</div>
 						</Link>
 
 						<div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
