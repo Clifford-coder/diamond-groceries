@@ -1,5 +1,5 @@
 import React from 'react';
-import womanWithGroceries from '../../assets/newlady-removebg-preview.png';
+import womanWithGroceries from '../../assets/a-lady-with-chicken.png';
 import leafBanner from '../../assets/banner-shape-1.png';
 
 export const Hero = () => (

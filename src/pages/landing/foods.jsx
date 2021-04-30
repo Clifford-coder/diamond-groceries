@@ -1,6 +1,6 @@
 import React from 'react';
-import freshFruits from '../../assets/foods/fuits.png';
-import freshVeges from '../../assets/foods/veges.jpg';
+import freshChicken from '../../assets/foods/assortment2.jpg';
+import freshSalmon from '../../assets/foods/flat-lay-assortment-seafood-with-copy-space_23-2148643611.jpg';
 import freshFish from '../../assets/foods/meat-and-fish.jpg';
 
 export const Foods = () => (
@@ -11,10 +11,10 @@ export const Foods = () => (
 					<div className="col-lg-4 col-md-6">
 						<div className="food-item">
 							<div className="food-image">
-								<img src={freshFruits} alt="fresh-fruits" />
+								<img src={freshChicken} alt="fresh-Chicken" />
 							</div>
 							<div className="food-content">
-								<h3>Fresh Fruits</h3>
+								<h3>Assorted Chicken</h3>
 							</div>
 						</div>
 					</div>
@@ -22,10 +22,10 @@ export const Foods = () => (
 					<div className="col-lg-4 col-md-6">
 						<div className="food-item">
 							<div className="food-image">
-								<img src={freshVeges} alt="fresh-vegetables" />
+								<img src={freshSalmon} alt="fresh-fish" />
 							</div>
 							<div className="food-content">
-								<h3>Fresh Vegetables</h3>
+								<h3>Fresh Fish</h3>
 							</div>
 						</div>
 					</div>

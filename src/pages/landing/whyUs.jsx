@@ -1,6 +1,6 @@
 import React from 'react';
 import fastDelivery from '../../assets/deliveryGuy.PNG';
-import organicFood from '../../assets/foods/veges.jpg';
+import organicFood from '../../assets/foods/assortment2.jpg';
 import easyPayment from '../../assets/payment.PNG';
 
 export const WhyUs = () => (
@@ -23,7 +23,7 @@ export const WhyUs = () => (
 							</div>
 
 							<div className="content">
-								<h3>Fresh Organic Food Provides</h3>
+								<h3>Fresh Healthy Frozen Provides</h3>
 								<p>
 									Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
 									incididunt

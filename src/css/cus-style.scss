@@ -75,8 +75,8 @@ Default CSS
 
 $main-font-family: 'Rubik', sans-serif;
 $optional-font-family: 'Open Sans', sans-serif;
-$main-color: #f35320;
-$optional-color: #f99459;
+$main-color: #014ba6;
+$optional-color: #ec192b;
 $white-color: #ffffff;
 $black-color: #111111;
 $paragraph-color: #6b6b84;
@@ -179,7 +179,7 @@ Default btn CSS
 	color: $white-color;
 	border-radius: 30px;
 	font-size: $font-size;
-	font-weight: 500;
+	font-weight: bold;
 	transition: $transition;
 	position: relative;
 	z-index: 1;
@@ -212,7 +212,7 @@ Default btn CSS
 	color: $white-color;
 	border-radius: 30px;
 	font-size: $font-size;
-	font-weight: 500;
+	font-weight: bold;
 	transition: $transition;
 	position: relative;
 	z-index: 1;
@@ -1314,7 +1314,7 @@ Main Banner Area CSS
 	overflow: hidden;
 }
 .main-banner-item {
-	background-image: url(../../assets/img/main-banner-bg-1.jpg);
+	background-image: url(./assets/img/main-banner-bg-1.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1323,7 +1323,7 @@ Main Banner Area CSS
 	background-attachment: fixed;
 
 	&.banner-item-two {
-		background-image: url(../../assets/img/main-banner-bg-2.jpg);
+		background-image: url(./assets/img/main-banner-bg-2.jpg);
 		padding-top: 50px;
 		padding-bottom: 0;
 		overflow: hidden;
@@ -1384,7 +1384,7 @@ Main Slider Area CSS
 	overflow: hidden;
 }
 .main-slider-item {
-	background-image: url(../../assets/img/main-slider/slider-bg-1.jpg);
+	background-image: url(./assets/img/main-slider/slider-bg-1.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1632,7 +1632,7 @@ Top Products Area CSS
 				list-style-type: none;
 				i {
 					font-size: $font-size;
-					color: $main-color;
+					color: $optional-color;
 				}
 			}
 		}
@@ -1831,7 +1831,7 @@ Top Products Area CSS
 Detox Water Area CSS
 =================================================*/
 .detox-water-area {
-	background-image: url(../../assets/img/detox-water/detox-water-bg.jpg);
+	background-image: url(./assets/img/detox-water/detox-water-bg.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -1958,14 +1958,14 @@ Department Area CSS
 Why Choose Area CSS
 =================================================*/
 .why-choose-area {
-	background-image: url(../../assets/img/why-choose-bg.jpg);
+	background-image: url(./assets/img/why-choose-bg.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 
 	&.choose-item-two {
-		background-image: url(../../assets/img/why-choose-bg-2.jpg);
+		background-image: url(./assets/img/why-choose-bg-2.jpg);
 
 		.why-choose-item {
 			margin-right: auto;
@@ -2280,7 +2280,7 @@ Featured Products Area CSS
 Testimonial Area CSS
 =================================================*/
 .testimonial-area {
-	background-image: url(../../assets/img/testimonial-bg.jpg);
+	background-image: url(./assets/img/testimonial-bg.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -2407,7 +2407,7 @@ Testimonial Area CSS
 Overview Area CSS
 =================================================*/
 .overview-area {
-	background-image: url(../../assets/img/overview-bg.jpg);
+	background-image: url(./assets/img/overview-bg.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -2686,7 +2686,7 @@ Food Area CSS
 		transition: $transition;
 		h3 {
 			font-size: 30px;
-			color: $black-color;
+			color: $white-color;
 			position: relative;
 			z-index: 1;
 		}
@@ -2707,7 +2707,7 @@ Food Area CSS
 Deal Area CSS
 =================================================*/
 .deal-area {
-	background-color: #fef2ea;
+	background-color: #ffeded;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
@@ -2727,7 +2727,7 @@ Deal Area CSS
 .deal-content {
 	#timer {
 		div {
-			background-color: #fad7d8;
+			background-color: #fa7a7e;
 			color: $main-color;
 			width: 120px;
 			height: 125px;
@@ -2741,7 +2741,7 @@ Deal Area CSS
 				margin-top: -2px;
 				font-size: $font-size;
 				font-weight: 600;
-				color: $black-color;
+				color: $white-color;
 			}
 		}
 	}
@@ -2924,7 +2924,7 @@ Video Area CSS
 =================================================*/
 .video-area {
 	text-align: center;
-	background-image: url(../../assets/img/video-bg.jpg);
+	background-image: url(./assets/img/video-bg.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -3188,7 +3188,7 @@ Team Area CSS
 Client Area CSS
 =================================================*/
 .client-area {
-	background-image: url(../../assets/img/main-banner-bg-1.jpg);
+	background-image: url(./assets/img/main-banner-bg-1.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -3335,7 +3335,7 @@ Services Area CSS
 =================================================*/
 .services-area {
 	&.bg-image {
-		background-image: url(../../assets/img/services-bg.jpg);
+		background-image: url(./assets/img/services-bg.jpg);
 		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3538,7 +3538,7 @@ Page Banner CSS
 .page-banner-area {
 	position: relative;
 	z-index: 1;
-	background-image: url(../../assets/img/page-banner/page-banner-1.jpg);
+	background-image: url(../assets/foods/flat-lay-assortment-seafood-with-copy-space_23-2148643611.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -3552,7 +3552,7 @@ Page Banner CSS
 		content: '';
 		height: 100%;
 		width: 100%;
-		background-color: #000000;
+		background-color: $main-color;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -3561,16 +3561,16 @@ Page Banner CSS
 	}
 
 	&.item-bg1 {
-		background-image: url(../../assets/img/page-banner/page-banner-2.jpg);
+		background-image: url(../assets/cart.png);
 	}
 	&.item-bg2 {
-		background-image: url(../../assets/img/page-banner/page-banner-3.jpg);
+		background-image: url(./assets/img/page-banner/page-banner-3.jpg);
 	}
 	&.item-bg3 {
-		background-image: url(../../assets/img/page-banner/page-banner-4.jpg);
+		background-image: url(./assets/img/page-banner/page-banner-4.jpg);
 	}
 	&.item-bg4 {
-		background-image: url(../../assets/img/page-banner/page-banner-5.jpg);
+		background-image: url(./assets/img/page-banner/page-banner-5.jpg);
 	}
 }
 .page-banner-content {
@@ -3593,7 +3593,7 @@ Page Banner CSS
 			display: inline-block;
 			margin-left: 15px;
 			font-weight: 600;
-			color: $main-color;
+			color: $optional-color;
 			position: relative;
 			&::before {
 				content: '';
@@ -4621,22 +4621,22 @@ Widget Sidebar CSS
 						position: center center !important;
 					}
 					&.bg1 {
-						background-image: url(../../assets/img/blog/blog-1.jpg);
+						background-image: url(./assets/img/blog/blog-1.jpg);
 					}
 					&.bg2 {
-						background-image: url(../../assets/img/blog/blog-2.jpg);
+						background-image: url(./assets/img/blog/blog-2.jpg);
 					}
 					&.bg3 {
-						background-image: url(../../assets/img/blog/blog-3.jpg);
+						background-image: url(./assets/img/blog/blog-3.jpg);
 					}
 					&.bg4 {
-						background-image: url(../../assets/img/blog/blog-7.jpg);
+						background-image: url(./assets/img/blog/blog-7.jpg);
 					}
 					&.bg5 {
-						background-image: url(../../assets/img/blog/blog-8.jpg);
+						background-image: url(./assets/img/blog/blog-8.jpg);
 					}
 					&.bg6 {
-						background-image: url(../../assets/img/blog/blog-9.jpg);
+						background-image: url(./assets/img/blog/blog-9.jpg);
 					}
 				}
 			}
@@ -4809,13 +4809,13 @@ Widget Sidebar CSS
 						position: center center !important;
 					}
 					&.bg1 {
-						background-image: url(../../assets/img/top-products/top-products-1.jpg);
+						background-image: url(./assets/img/top-products/top-products-1.jpg);
 					}
 					&.bg2 {
-						background-image: url(../../assets/img/top-products/top-products-2.jpg);
+						background-image: url(./assets/img/top-products/top-products-2.jpg);
 					}
 					&.bg3 {
-						background-image: url(../../assets/img/top-products/top-products-3.jpg);
+						background-image: url(./assets/img/top-products/top-products-3.jpg);
 					}
 				}
 			}
@@ -5324,7 +5324,7 @@ Checkout Area CSS
 Product Details Area CSS
 =================================================*/
 .product-details-image {
-	background-image: url(../../assets/img/top-products/top-products-7.jpg);
+	background-image: url(./assets/img/top-products/top-products-7.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -6666,7 +6666,7 @@ Modal CSS
 			}
 		}
 		.products-image {
-			background-image: url(../../assets/img/top-products/top-products-4.jpg);
+			background-image: url(./assets/img/top-products/top-products-4.jpg);
 			background-position: center center;
 			background-size: cover;
 			background-repeat: no-repeat;

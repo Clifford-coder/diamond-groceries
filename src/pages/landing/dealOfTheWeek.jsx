@@ -1,9 +1,9 @@
 import React from 'react';
-import dealImage1 from '../../assets/deal/deal-1.png';
-import dealImageShape1 from '../../assets/deal/deal-shape-1.png';
-import dealImageShape2 from '../../assets/deal/deal-shape-2.png';
-import dealImageShape3 from '../../assets/deal/deal-shape-3.png';
-import dealImageShape4 from '../../assets/deal/deal-shape-4.png';
+import dealImage1 from '../../assets/deal/deal-2.png';
+import dealImageShape1 from '../../assets/deal/deal-shape-5.png';
+import dealImageShape2 from '../../assets/deal/deal-shape-6.png';
+import dealImageShape3 from '../../assets/deal/deal-shape-7.png';
+import dealImageShape4 from '../../assets/deal/deal-shape-8.png';
 
 export const DealsOfTheWeek = () => (
 	<>

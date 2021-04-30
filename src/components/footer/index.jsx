@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import something from '../../assets/deal/deal-1.png';
+import something from '../../assets/foods/chicken1.png';
 
 const Footer = () => (
 	<>
@@ -21,17 +21,17 @@ const Footer = () => (
 							<ul className="social">
 								<li>
 									<Link to="/" className="facebook" target="_blank">
-										<i className="bx bxl-facebook" />
+										<i className="fab fa-facebook" />
 									</Link>
 								</li>
 								<li>
 									<Link to="/" className="twitter" target="_blank">
-										<i className="bx bxl-facebook" />
+										<i className="fab fa-twitter" />
 									</Link>
 								</li>
 								<li>
-									<Link to="/" className="facebook" target="_blank">
-										<i className="bx bxl-facebook" />
+									<Link to="/" className="instagram" target="_blank">
+										<i className="fab fa-instagram" />
 									</Link>
 								</li>
 							</ul>
@@ -47,7 +47,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -56,7 +56,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -65,7 +65,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -74,7 +74,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -83,7 +83,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -92,7 +92,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -100,16 +100,7 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
-										</a>
-									</div>
-								</li>
-
-								<li>
-									<div className="box">
-										<img src={something} alt="product" />
-										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -118,7 +109,16 @@ const Footer = () => (
 									<div className="box">
 										<img src={something} alt="product" />
 										<a href="instagram.com" target="_blank" className="link-btn">
-											<i className="bx bxl-instagram" />
+											<i className="fab fa-instagram" />
+										</a>
+									</div>
+								</li>
+
+								<li>
+									<div className="box">
+										<img src={something} alt="product" />
+										<a href="instagram.com" target="_blank" className="link-btn">
+											<i className="fab fa-instagram" />
 										</a>
 									</div>
 								</li>
@@ -159,17 +159,17 @@ const Footer = () => (
 
 							<ul className="footer-contact-info">
 								<li>
-									<i className="bx bxs-phone" />
+									<i className="fas fa-phone" />
 									<span>Phone</span>
 									<a href="tel:407409202288">(+40) 74 0920 2288</a>
 								</li>
 								<li>
-									<i className="bx bx-envelope" />
+									<i className="fas fa-envelope-open-text" />
 									<span>Email</span>
 									<a href="mailto:hello@orgo.com">hello@orgo.com</a>
 								</li>
 								<li>
-									<i className="bx bx-map" />
+									<i className="fas fa-map-marker-alt" />
 									<span>Address</span>
 									175 5th Ave Premium Area, New York, NY 10010, United States
 								</li>

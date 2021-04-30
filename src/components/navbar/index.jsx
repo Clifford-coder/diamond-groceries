@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo1-removebg-preview.png';
+import logo from '../../assets/small-logo.png';
 
 const Navbar = () => (
 	<>
@@ -19,7 +19,7 @@ const Navbar = () => (
 			<div className="main-navbar">
 				<div className="container">
 					<nav className="navbar navbar-expand-md navbar-light">
-						<Link className="navbar-brand" to="/">
+						<Link className="navbar-brand" to="/store">
 							<div className="logo">
 								<img src={logo} alt="logo" />
 							</div>
@@ -33,8 +33,8 @@ const Navbar = () => (
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link to="/" className="nav-link">
-										Shop
+									<Link to="/store" className="nav-link">
+										Store
 									</Link>
 								</li>
 								<li className="nav-item">
