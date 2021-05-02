@@ -1,7 +1,7 @@
 import React from 'react';
-import { ProductCard } from '../../components';
+import { ProductCard } from '.';
 
-export const TrendingProducts = () => (
+const TrendingProducts = () => (
 	<>
 		<section className="top-products-area pb-70">
 			<div className="container">
@@ -41,3 +41,5 @@ export const TrendingProducts = () => (
 		</section>
 	</>
 );
+
+export default TrendingProducts;

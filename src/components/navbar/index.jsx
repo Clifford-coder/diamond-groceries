@@ -38,12 +38,22 @@ const Navbar = () => (
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link to="/" className="nav-link">
+									<Link to="/login" className="nav-link">
+										Sign In
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link to="/sign-up" className="nav-link">
+										Sign Up
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link to="/contact" className="nav-link">
 										Contact Us
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link to="/" className="nav-link">
+									<Link to="/about-us" className="nav-link">
 										About Us
 									</Link>
 								</li>

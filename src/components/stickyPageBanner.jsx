@@ -15,7 +15,7 @@ const StickyPageBanner = ({ title, className2 }) => {
 								<h2>{title}</h2>
 								<ul>
 									<li>
-										<Link to="/store">Diamond Frozen Store</Link>
+										<Link to="/">Diamond Frozen Foods</Link>
 									</li>
 									<li>Fresh and healthy only</li>
 								</ul>

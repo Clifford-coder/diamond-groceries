@@ -75,8 +75,8 @@ Default CSS
 
 $main-font-family: 'Rubik', sans-serif;
 $optional-font-family: 'Open Sans', sans-serif;
-$main-color: #014ba6;
-$optional-color: #ec192b;
+$main-color: #0c00a0;
+$optional-color: #e70d1f;
 $white-color: #ffffff;
 $black-color: #111111;
 $paragraph-color: #6b6b84;
@@ -3564,13 +3564,13 @@ Page Banner CSS
 		background-image: url(../assets/cart.png);
 	}
 	&.item-bg2 {
-		background-image: url(./assets/img/page-banner/page-banner-3.jpg);
+		background-image: url(../assets/contact.jpg);
 	}
 	&.item-bg3 {
-		background-image: url(./assets/img/page-banner/page-banner-4.jpg);
+		background-image: url(../assets/sign-up.jpg);
 	}
 	&.item-bg4 {
-		background-image: url(./assets/img/page-banner/page-banner-5.jpg);
+		background-image: url(../assets/error-page.jpg);
 	}
 }
 .page-banner-content {
@@ -4845,7 +4845,7 @@ Widget Sidebar CSS
 				.rating {
 					margin-top: 8px;
 					i {
-						color: #f6b500;
+						color: $optional-color;
 						display: inline-block;
 						margin-right: -2px;
 					}
@@ -5324,7 +5324,7 @@ Checkout Area CSS
 Product Details Area CSS
 =================================================*/
 .product-details-image {
-	background-image: url(./assets/img/top-products/top-products-7.jpg);
+	// background-image: url(./assets/img/top-products/top-products-7.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;

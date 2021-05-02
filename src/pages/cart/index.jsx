@@ -13,7 +13,7 @@ const Cart = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-12 col-md-12">
-							<form>
+							<div>
 								<div className="cart-table table-responsive">
 									<table className="table table-bordered">
 										<thead>
@@ -70,7 +70,7 @@ const Cart = () => {
 										Proceed to Checkout
 									</Link>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

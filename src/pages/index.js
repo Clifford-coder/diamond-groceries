@@ -1,3 +1,9 @@
 export { default as Landing } from './landing';
 export { default as Store } from './store';
 export { default as Cart } from './cart';
+export { default as ItemDetails } from './productDetails';
+export { default as Contact } from './contact';
+export { default as Checkout } from './checkout';
+export { default as PageNotFound } from './pageNotFound';
+export { default as Login } from './login';
+export { default as SignUp } from './signUp';

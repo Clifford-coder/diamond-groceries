@@ -10,15 +10,15 @@ const ProductCard = () => {
 		<>
 			<div className="top-products-item">
 				<div className="products-image">
-					<Link href="shop-details.html">
+					<Link to="/store/single">
 						<img src={fruit} alt="product" />
 					</Link>
 
 					<ul className="products-action">
 						<li>
-							<a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart">
+							<Link to="/cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart">
 								<i className="flaticon-shopping-cart" />
-							</a>
+							</Link>
 						</li>
 						<li>
 							<Link to="/" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist">
