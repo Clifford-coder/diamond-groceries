@@ -1,26 +1,38 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Navbar, Footer } from './components';
-import { Cart, Checkout, Contact, ItemDetails, Landing, Login, PageNotFound, SignUp, Store } from './pages';
+// import { Navbar, Footer } from './components';
+import {
+	// Cart,
+	// Checkout,
+	// Contact,
+	// ItemDetails,
+	// Landing,
+	// Login,
+	// PageNotFound,
+	// SignUp,
+	SiteComingOutSoon,
+	// Store,
+} from './pages';
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<Navbar />
+				{/* <Navbar /> */}
 				<Switch>
-					<Route path="/" exact component={Landing} />
-					<Route path="/store" exact component={Store} />
-					<Route path="/cart" exact component={Cart} />
-					<Route path="/single" exact component={ItemDetails} />
-					<Route path="/contact" exact component={Contact} />
-					<Route path="/checkout" exact component={Checkout} />
-					<Route path="/login" exact component={Login} />
-					<Route path="/sign-up" exact component={SignUp} />
-					<Route path="*" exact component={PageNotFound} />
+					<Route path="/" exact component={SiteComingOutSoon} />
+					<Route path="/landing" exact component={SiteComingOutSoon} />
+					<Route path="/store" exact component={SiteComingOutSoon} />
+					<Route path="/cart" exact component={SiteComingOutSoon} />
+					<Route path="/single" exact component={SiteComingOutSoon} />
+					<Route path="/contact" exact component={SiteComingOutSoon} />
+					<Route path="/checkout" exact component={SiteComingOutSoon} />
+					<Route path="/login" exact component={SiteComingOutSoon} />
+					<Route path="/sign-up" exact component={SiteComingOutSoon} />
+					<Route path="*" exact component={SiteComingOutSoon} />
 				</Switch>
-				<Footer />
+				{/* <Footer /> */}
 			</BrowserRouter>
 		</>
 	);

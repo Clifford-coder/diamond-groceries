@@ -7,3 +7,4 @@ export { default as Checkout } from './checkout';
 export { default as PageNotFound } from './pageNotFound';
 export { default as Login } from './login';
 export { default as SignUp } from './signUp';
+export { default as SiteComingOutSoon } from './siteInProgress';

@@ -1,0 +1,97 @@
+.container {
+	padding: 3rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.in-progress-svg {
+	width: 70%;
+	height: 50%;
+}
+
+.writeup {
+	text-align: left;
+}
+.writeup h1 {
+	font-size: 1.8rem;
+	color: '#223e22';
+	text-align: center;
+}
+
+.writeup p {
+	font-weight: 600;
+	font-size: 20px;
+	margin: auto;
+}
+.social-media {
+	display: grid;
+	padding: 1rem;
+}
+
+.social-media a {
+	padding: 0.3rem 1rem;
+	margin-bottom: 0.5rem;
+	margin-left: 0.6rem;
+	color: white !important;
+	font-size: 1.3rem;
+	cursor: pointer;
+	text-align: center;
+}
+
+.social-media span {
+	margin-left: 6px;
+	font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding-top: 3rem;
+	}
+
+	.in-progress-svg {
+		width: 40%;
+		height: 40%;
+	}
+
+	.writeup {
+		margin-left: 2rem;
+		padding-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.writeup h1 {
+		font-size: 3.5rem;
+		color: '#223e22';
+	}
+	.writeup p {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	.social-media {
+		display: flex;
+	}
+
+	.social-media a {
+		padding: 0.5rem 1.8rem;
+		margin-left: 0.5rem;
+		color: white !important;
+		font-size: 1.3rem;
+		cursor: pointer;
+	}
+
+	.social-media a:hover {
+		transition: all linear 0.14s;
+		transform: scale(1.03);
+	}
+
+	.social-media span {
+		margin-left: 6px;
+	}
+}
