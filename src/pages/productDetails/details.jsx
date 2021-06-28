@@ -44,7 +44,7 @@ const description = () => {
 							<span className="minus-btn">
 								<i className="fas fa-minus" />
 							</span>
-							<input type="text" min="1" value="1" onChange={(jsk) => console.log(jsk)} />
+							<input type="text" min="1" value="1" />
 							<span className="plus-btn">
 								<i className="fas fa-plus" />
 							</span>
