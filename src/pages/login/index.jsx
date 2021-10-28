@@ -1,54 +1,142 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import BeatLoader from 'react-spinners/BeatLoader';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { StickyPagebanner } from '../../components';
+import API from '../../network/api';
+import setAuthToken from '../../network/setAuthToken';
+import { UserContext } from '../../context/UserContext';
 
 const index = () => {
-	const he = 'fsf';
-	return (
-		<>
-			<StickyPagebanner title="Logging in" className2="item-bg3" />
-			<section className="login-area ptb-100">
-				<div className="container">
-					<div className="login-form">
-						<h2>Login</h2>
+  const [, setGlobalUser] = useContext(UserContext);
+  const history = useHistory();
 
-						<form>
-							<div className="form-group">
-								<input type="text" className="form-control" placeholder="Username or email" />
-							</div>
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().required('Email is required').email('Email is invalid'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(8, 'Password must be at least 8 characters')
+      .max(40, 'Password must not exceed 40 characters'),
+  });
 
-							<div className="form-group">
-								<input type="password" className="form-control" placeholder="Password" />
-							</div>
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      try {
+        // make a post request to strapi
+        const response = await API.post('/auth/local', {
+          identifier: values.email,
+          password: values.password,
+        });
+        const { jwt, user } = response.data;
+        // save the jwt in the local storage
+        const valToStoreInLocalStorage = {
+          user,
+          jwt,
+        };
+        localStorage.setItem(
+          'diamond-user',
+          JSON.stringify(valToStoreInLocalStorage)
+        );
+        // set auth token
+        setAuthToken(jwt);
+        // save the user to a global state.
+        setGlobalUser(user);
+        // todo: navigate to whever he was expect for if he was at the auth pages, then send him to store
+        history.push('/store');
+      } catch (error) {
+        toast.error('Unable to log in, please try again!');
+      }
+    },
+  });
 
-							<div className="row align-items-center">
-								<div className="col-lg-6 col-md-6 col-sm-6">
-									<div className="form-check">
-										<input type="checkbox" className="form-check-input" id="checkme" />
-										<label className="form-check-label" htmlFor="checkme">
-											Remember me
-										</label>
-									</div>
-								</div>
+  const {
+    handleChange,
+    handleSubmit,
+    handleBlur,
+    values,
+    errors,
+    touched,
+    isSubmitting,
+  } = formik;
 
-								<div className="col-lg-6 col-md-6 col-sm-6 lost-your-password">
-									<Link to="/" className="lost-your-password">
-										Lost your password?
-									</Link>
-								</div>
-							</div>
+  return (
+    <>
+      <StickyPagebanner title="Logging in" className2="item-bg3" />
+      <section className="login-area ptb-100">
+        <div className="container">
+          <div className="register-form">
+            <h3>Login form</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                />
+                {touched.email && errors.email ? (
+                  <div className="error-message">
+                    <i className="error-icon fas fa-exclamation-triangle" />
+                    <span>{errors.email}</span>
+                  </div>
+                ) : null}
+              </div>
 
-							<button type="submit" className="default-btn">
-								Login
-							</button>
-						</form>
-					</div>
-				</div>
-			</section>
-		</>
-	);
+              <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.password}
+                />
+                {touched.password && errors.password ? (
+                  <div className="error-message">
+                    <i className="error-icon fas fa-exclamation-triangle" />
+                    <span>{errors.password}</span>
+                  </div>
+                ) : null}
+              </div>
+              <div className="wrapper">
+                <div className="lost-your-password">
+                  <Link to="/sign-up" className="lost-your-password">
+                    Don't have an account?
+                  </Link>
+                </div>
+                <div className="lost-your-password">
+                  <Link to="/forget-password" className="lost-your-password">
+                    Lost your password?
+                  </Link>
+                </div>
+              </div>
+              <button
+                disabled={isSubmitting}
+                type="submit"
+                className="default-btn"
+              >
+                {isSubmitting ? <BeatLoader size={16} color="#fff" /> : 'Login'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default index;
