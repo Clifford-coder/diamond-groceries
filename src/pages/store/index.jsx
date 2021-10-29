@@ -1,12 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-unused-vars */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { BeatLoader } from 'react-spinners';
+import { toast } from 'react-toastify';
 
-import { ProductCard, StickyPagebanner } from '../../components';
+import { ProductCard, StickyPagebanner, CenterContent } from '../../components';
+import { ProductContext } from '../../context/ProductsContext';
 
 const Store = () => {
-  const hello = 'Hell0';
+  const [products, isLoading, error] = useContext(ProductContext);
+
+  if (error)
+    return toast.error(
+      'Oops! There was an error in getting products, try again'
+    );
+
   return (
     <>
       <StickyPagebanner title="Welcome to Diamond Frozen Store" />
@@ -18,6 +25,7 @@ const Store = () => {
           </p>
         </div>
 
+        {/* search form */}
         <div className="col-lg-4 col-md-4 result-count">
           <form style={{ display: 'flex' }} className="search-box">
             <input
@@ -42,35 +50,27 @@ const Store = () => {
               <option>Price: high to low</option>
             </select>
           </div>
-          {/* search form */}
         </div>
       </div>
       <section className="top-products-area pb-70">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
+          {isLoading ? (
+            <CenterContent>
+              <BeatLoader size={30} color="#0c00a0" />
+            </CenterContent>
+          ) : (
+            <div className="row">
+              {!products || products.length === 0 ? (
+                <h1>No Products</h1>
+              ) : (
+                products.map((product) => (
+                  <div key={product._id} className="col-lg-4 col-md-6">
+                    <ProductCard product={product} />
+                  </div>
+                ))
+              )}
             </div>
-
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <ProductCard />
-            </div>
-          </div>
+          )}
         </div>
       </section>
     </>

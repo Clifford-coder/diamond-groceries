@@ -7,3 +7,4 @@ export { default as CartItem } from './CartItem';
 export { default as StickyPagebanner } from './stickyPageBanner';
 export { default as ProductWidget } from './productWidget';
 export { default as TrendingProducts } from './trendingProducts';
+export { default as CenterContent } from './CenterContent';

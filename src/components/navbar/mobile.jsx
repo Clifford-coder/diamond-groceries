@@ -16,7 +16,7 @@ const MobileNav = ({ user, setMobileNav }) => {
   return (
     <div className="mobile-nav-wrap">
       {navLinks.map((nav) => (
-        <div onClick={() => setMobileNav(false)}>
+        <div key={nav.name} onClick={() => setMobileNav(false)}>
           <Link to={nav.to}>{nav.name}</Link>
         </div>
       ))}
