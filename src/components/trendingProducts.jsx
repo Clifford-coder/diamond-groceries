@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BeatLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 import { ProductCard, CenterContent } from '.';
-import { ProductContext } from '../context/ProductsContext';
+import { useFetchProducts } from '../hooks';
 
 const TrendingProducts = () => {
-  const [products, isLoading, error] = useContext(ProductContext);
+  const [products, isLoading, error] = useFetchProducts('/products');
 
   if (error)
     return toast.error(

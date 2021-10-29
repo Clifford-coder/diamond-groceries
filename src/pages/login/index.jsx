@@ -10,10 +10,8 @@ import * as Yup from 'yup';
 import { StickyPagebanner } from '../../components';
 import API from '../../network/api';
 import setAuthToken from '../../network/setAuthToken';
-import { UserContext } from '../../context/UserContext';
 
 const index = () => {
-  const [, setGlobalUser] = useContext(UserContext);
   const history = useHistory();
 
   const validationSchema = Yup.object().shape({
@@ -50,7 +48,6 @@ const index = () => {
         // set auth token
         setAuthToken(jwt);
         // save the user to a global state.
-        setGlobalUser(user);
         // todo: navigate to whever he was expect for if he was at the auth pages, then send him to store
         history.push('/store');
       } catch (error) {

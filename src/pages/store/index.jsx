@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from 'react';
+import React from 'react';
 import { BeatLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 
 import { ProductCard, StickyPagebanner, CenterContent } from '../../components';
-import { ProductContext } from '../../context/ProductsContext';
+import { useFetchProducts } from '../../hooks';
 
 const Store = () => {
-  const [products, isLoading, error] = useContext(ProductContext);
+  const [products, isLoading, error] = useFetchProducts('/products');
 
   if (error)
     return toast.error(
