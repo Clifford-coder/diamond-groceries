@@ -1058,6 +1058,7 @@ Navbar Area CSS
   }
 }
 
+// for mobile styles only.
 @media (max-width: 600px) {
   .register-form {
     width: 95% !important;
@@ -1072,9 +1073,6 @@ Navbar Area CSS
 
 // Mobile and iPad Navbar
 @media only screen and (max-width: 1199px) {
-  .register-form {
-    width: 100%;
-  }
   .main-responsive-nav {
     display: block;
     .main-responsive-menu {

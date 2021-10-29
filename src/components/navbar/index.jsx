@@ -1,14 +1,21 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/small-logo.png';
+import MobileNav from './mobile';
 
 const Navbar = () => {
   const location = useLocation();
+  const [showMobileNav, setMobileNav] = useState(false);
+
+  const toggleMobileNav = () => {
+    setMobileNav(!showMobileNav);
+  };
+
+  // get user
   const fromLoclStorage = localStorage.getItem('diamond-user');
-
   const user = JSON.parse(fromLoclStorage);
-
-  console.log('user from local storage', user);
 
   if (
     location.pathname === '/' ||
@@ -110,42 +117,25 @@ const Navbar = () => {
         </div>
         <div className="others-option-for-responsive">
           <div className="container">
-            <div className="dot-menu">
-              <div className="inner">
-                <div className="circle circle-one" />
-                <div className="circle circle-two" />
-                <div className="circle circle-three" />
-              </div>
-            </div>
-            <div className="container">
-              <div className="option-inner">
-                <div className="others-options d-flex align-items-center">
-                  <div className="option-item">
-                    <div className="cart-btn">
-                      <a href="cart.html">
-                        <i className="fas fa-cart" />
-                        <span>0</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="option-item">
-                    <form className="search-box">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search"
-                      />
-                      <button type="submit">
-                        <i className="flaticon-search" />
-                      </button>
-                    </form>
-                  </div>
+            <div onClick={toggleMobileNav} className="dot-menu">
+              {showMobileNav ? (
+                <i
+                  style={{ fontSize: '24px' }}
+                  className="fas fa-times inner"
+                />
+              ) : (
+                <div className="inner">
+                  <div className="circle circle-one" />
+                  <div className="circle circle-two" />
+                  <div className="circle circle-three" />
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
       </div>
+      {/* mobile navigation */}
+      {showMobileNav && <MobileNav user={user} setMobileNav={setMobileNav} />}
     </>
   );
 };
