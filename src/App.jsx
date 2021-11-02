@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import { Navbar, Footer } from './components';
+import { CartContextProvider } from './context';
 import {
   Cart,
   Checkout,
@@ -21,21 +22,23 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={SiteComingOutSoon} />
-          <Route path="/landing" exact component={Landing} />
-          <Route path="/store" exact component={Store} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/store/:id" exact component={ItemDetails} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/checkout" exact component={Checkout} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/sign-up" exact component={SignUp} />
-          <Route path="*" exact component={PageNotFound} />
-        </Switch>
-        <Footer />
-        <ToastContainer />
+        <CartContextProvider>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={SiteComingOutSoon} />
+            <Route path="/landing" exact component={Landing} />
+            <Route path="/store" exact component={Store} />
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/store/:id" exact component={ItemDetails} />
+            <Route path="/contact" exact component={Contact} />
+            <Route path="/checkout" exact component={Checkout} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/sign-up" exact component={SignUp} />
+            <Route path="*" exact component={PageNotFound} />
+          </Switch>
+          <Footer />
+          <ToastContainer />
+        </CartContextProvider>
       </BrowserRouter>
     </>
   );

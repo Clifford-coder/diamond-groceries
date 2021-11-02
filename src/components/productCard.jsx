@@ -1,11 +1,28 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+
 /* eslint-disable react/prop-types */
 /* eslint-disable react/require-default-props */
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { CartContext } from '../context/Cart';
 
 const ProductCard = ({ product }) => {
-  const { title, images, _id, price, discount } = product;
+  const { title, images, _id, price, discount, category } = product;
+  const { cartItems, addItemToCart } = useContext(CartContext);
+
+  // check if item already exist in cart
+  const existInCartAlready = () =>
+    cartItems.findIndex((item) => item.product.id === _id) !== -1;
+
+  const addToCart = () => {
+    if (existInCartAlready())
+      return toast.warn('This product has already been added to cart.');
+    addItemToCart(product);
+  };
+
   return (
     <>
       <div className="top-products-item">
@@ -13,26 +30,30 @@ const ProductCard = ({ product }) => {
           <Link to={`/store/${_id}`}>
             <img src={images[0].url} alt="product" />
           </Link>
-
           <ul className="products-action">
             <li>
               <span
                 data-tooltip="tooltip"
                 data-placement="top"
-                title="Add to Cart"
+                title={existInCartAlready() ? 'Already In Cart' : 'Add to cart'}
+                onClick={addToCart}
+                style={{
+                  cursor: existInCartAlready() ? 'not-allowed' : 'pointer',
+                }}
+                role="button"
               >
-                <i className="flaticon-shopping-cart" />
+                <i className="fas fa-cart-plus" />
               </span>
             </li>
-            <li>
+            {/* <li>
               <span
                 data-tooltip="tooltip"
                 data-placement="top"
                 title="Add to Wishlist"
               >
-                <i className="flaticon-heart" />
+                <i className="fas fa-heart" />
               </span>
-            </li>
+            </li> */}
             <li>
               <span
                 data-tooltip="tooltip"
@@ -41,25 +62,27 @@ const ProductCard = ({ product }) => {
                 data-toggle="modal"
                 data-target="#productsQuickView"
               >
-                <i className="flaticon-search" />
+                <i className="fas fa-eye" />
               </span>
             </li>
           </ul>
 
           <div className="sale">
-            <span>Sale</span>
+            <span>{category}</span>
           </div>
         </div>
 
         <div className="products-content">
           <h3>
-            <a href="shop-details.html">{title}</a>
+            <Link to={`/store/${_id}`}>{title}</Link>
           </h3>
           <div className="price">
             <span className="new-price">
-              {`$ ${price - price * (discount / 100)}`}{' '}
+              {`GH₵ ${price - price * (discount / 100)}`}{' '}
             </span>
-            <span className="old-price">{`$ ${price}`}</span>
+            {discount !== 0 ? (
+              <span className="old-price">{`GH₵ ${price}`}</span>
+            ) : null}
           </div>
           <ul className="rating">
             <li>

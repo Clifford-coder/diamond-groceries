@@ -17,5 +17,9 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/prop-types': 'off',
     'no-underscore-dangle': 'off',
+    'jsx-a11y/interactive-supports-focus': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'consistent-return': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
 };

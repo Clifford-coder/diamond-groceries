@@ -851,7 +851,7 @@ Navbar Area CSS
     z-index: 9991;
     position: absolute;
     right: 60px;
-    top: -28px;
+    top: -60px;
 
     .inner {
       display: flex;
@@ -877,6 +877,7 @@ Navbar Area CSS
   }
   .container {
     position: relative;
+    padding: 0px !important;
     .container {
       position: absolute;
       right: 0;
@@ -1556,6 +1557,7 @@ Top Products Area CSS
         transform: translateY(30px);
         transition: all 0.3s ease-in-out 0s;
         opacity: 0;
+        cursor: pointer;
         visibility: hidden;
         margin: 0 5px;
         span {
@@ -4897,6 +4899,7 @@ Widget Sidebar CSS
 Cart Area CSS
 =================================================*/
 .cart-table {
+  overflow-x: auto;
   table {
     margin-bottom: 0;
     thead {
@@ -4904,7 +4907,9 @@ Cart Area CSS
         th {
           border-bottom-width: 0px;
           vertical-align: middle;
-          padding: 0 0 20px;
+          // padding: 0 0 20px;
+          margin-left: 20px;
+          margin-right: 20px;
           border: none;
           white-space: nowrap;
           font-weight: bold;
@@ -4919,8 +4924,8 @@ Cart Area CSS
           white-space: nowrap;
           padding-top: 20px;
           padding-bottom: 20px;
-          padding-left: 0;
-          padding-right: 0;
+          margin-left: 20px;
+          margin-right: 20px;
           border-color: #eaedff;
           border-left: none;
           border-right: none;

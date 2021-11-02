@@ -56,6 +56,7 @@ const Store = () => {
         <div className="container">
           {isLoading ? (
             <CenterContent>
+              <h4 style={{ marginRight: '10px' }}>Please wait</h4>
               <BeatLoader size={30} color="#0c00a0" />
             </CenterContent>
           ) : (
