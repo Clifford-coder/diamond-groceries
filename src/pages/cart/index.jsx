@@ -40,7 +40,7 @@ const Cart = () => {
                     {cartItems.map((item) => (
                       <CartItem
                         key={item.product.id}
-                        addItemToCart={addItemToCart}
+                        addItemToCart={() => addItemToCart(item)}
                         itemDetails={item}
                         removeCompletelyFromCart={removeCompletelyFromCart}
                         decreaseItemFromCart={removeItemFromCart}
