@@ -55,15 +55,17 @@ const ProductCard = ({ product }) => {
               </span>
             </li> */}
             <li>
-              <span
-                data-tooltip="tooltip"
-                data-placement="top"
-                title="Quick View"
-                data-toggle="modal"
-                data-target="#productsQuickView"
-              >
-                <i className="fas fa-eye" />
-              </span>
+              <Link to={`/store/${_id}`}>
+                <span
+                  data-tooltip="tooltip"
+                  data-placement="top"
+                  title="View product details"
+                  data-toggle="modal"
+                  data-target="#productsQuickView"
+                >
+                  <i className="fas fa-eye" />
+                </span>
+              </Link>
             </li>
           </ul>
 
