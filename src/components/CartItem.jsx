@@ -1,36 +1,28 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { CartContext } from '../context/Cart';
 
 const CartItem = ({
   itemDetails,
   addItemToCart,
-  decreaseItemFromCart,
+  removeItemFromCart,
   removeCompletelyFromCart,
 }) => {
   const { title, images, _id, price, discount } = itemDetails.product;
-  // const { cartItems } = useContext(CartContext);
-  // const [itemQuantity, setItemQuantity] = useState(1);
   const [unitPrice, setUnitPrice] = useState(price - price * (discount / 100));
   const [unitSubTotal, setUnitSubTotal] = useState(
     ((price - price * (discount / 100)) * itemDetails.quantity).toFixed(2)
   );
 
-  // useEffect(() => {
-  //   setItemQuantity(itemDetails.quantity);
-  //   console.log('item quantity -----', itemQuantity);
-  // }, [itemDetails.quantity]);
-
-  console.log('item detailssss ---', itemDetails);
-
-  useCallback(() => {
+  useEffect(() => {
     setUnitPrice(price - price * (discount / 100));
     setUnitSubTotal(
       ((price - price * (discount / 100)) * itemDetails.quantity).toFixed(2)
     );
   }, [itemDetails.quantity]);
+
   const increaseItemQuantity = () => addItemToCart(itemDetails);
+  const decreaseItemQuantity = () => removeItemFromCart(itemDetails.id);
 
   return (
     <>
@@ -48,13 +40,10 @@ const CartItem = ({
         </td>
         <td className="product-quantity">
           <div className="input-counter">
-            <span
-              onClick={() => decreaseItemFromCart(_id)}
-              className="minus-btn"
-            >
+            <span onClick={decreaseItemQuantity} className="minus-btn">
               <i className="fas fa-minus" />
             </span>
-            <input type="number" value={itemDetails.quantity} />
+            <input type="number" name="quantity" value={itemDetails.quantity} />
             <span onClick={increaseItemQuantity} className="plus-btn">
               <i className="fas fa-plus" />
             </span>

@@ -12,11 +12,10 @@ const CartContextProvider = ({ children }) => {
 
   // add to cart
   const addItemToCart = (product) => {
-    const temp = cartItems;
+    const temp = [...cartItems];
     // const userId = user?.user?.id || null;
     const productIndex = cartItems.findIndex((item) => item.id === product.id);
     // increment the quantity if the same
-    console.log('products to be added to cart ----- ', product);
     if (productIndex !== -1) temp[productIndex].quantity += 1;
     else
       temp.push({
@@ -29,9 +28,7 @@ const CartContextProvider = ({ children }) => {
 
   // reduce item quantity in cart
   const removeItemFromCart = (id) => {
-    const temp = cartItems;
-    console.log('product id to be removed from cart ----- ', id);
-
+    const temp = [...cartItems];
     const productIndex = cartItems.findIndex((item) => item.id === id);
     if (productIndex === -1) return;
     if (temp[productIndex].quantity === 1) {
@@ -44,7 +41,7 @@ const CartContextProvider = ({ children }) => {
 
   // remove completely from cart.
   const removeCompletelyFromCart = (id) => {
-    const temp = cartItems;
+    const temp = [...cartItems];
     const productIndex = cartItems.findIndex((item) => item.id === id);
     if (productIndex === -1) return;
     temp.splice(productIndex, 1);

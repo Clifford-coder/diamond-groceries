@@ -43,7 +43,7 @@ const Cart = () => {
                         addItemToCart={() => addItemToCart(item)}
                         itemDetails={item}
                         removeCompletelyFromCart={removeCompletelyFromCart}
-                        decreaseItemFromCart={removeItemFromCart}
+                        removeItemFromCart={removeItemFromCart}
                       />
                     ))}
                   </tbody>
