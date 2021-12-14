@@ -12,7 +12,6 @@ import { useFetchProducts } from '../../hooks';
 const Store = () => {
   const [userInput, setUserInput] = useState('');
   const [sortOption, setSortOption] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [filteredProduct, setFilteredProduct] = useState(null);
   const [products, isLoading, error] = useFetchProducts('/products');
 
@@ -26,29 +25,31 @@ const Store = () => {
         return product;
       }
     });
-    setFilteredProduct(newProducts);
+
+    if (!newProducts) return setFilteredProduct(null);
+
+    setFilteredProduct([...newProducts]);
   }, [userInput]);
 
   // sort products
   useEffect(() => {
     // low to high
-    console.log('sorting ---- ', sortOption);
     if (sortOption === 'lowToHigh') {
       const sortedP = !filteredProduct
         ? products?.sort((a, b) => a.price - b.price)
         : filteredProduct?.sort((a, b) => a.price - b.price);
-      console.log('sorted array l to h -----', sortedP);
-      setFilteredProduct(sortedP);
+      if (!sortedP) return setFilteredProduct(sortedP);
+      setFilteredProduct([...sortedP]);
     } else if (sortOption === 'highToLow') {
       const sortedP = !filteredProduct
         ? products?.sort((a, b) => b.price - a.price)
         : filteredProduct?.sort((a, b) => b.price - a.price);
-      console.log('sorted array h to l -----', sortedP);
-      setFilteredProduct(sortedP);
+      if (!sortedP) return setFilteredProduct(sortedP);
+      setFilteredProduct([...sortedP]);
     } else {
       const newP = shuffle(!filteredProduct ? products : filteredProduct);
-      console.log('products sort ', newP);
-      setFilteredProduct(newP);
+      if (!newP) return setFilteredProduct(newP);
+      setFilteredProduct([...newP]);
     }
   }, [sortOption]);
 
