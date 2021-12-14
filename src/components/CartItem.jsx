@@ -22,14 +22,14 @@ const CartItem = ({
   }, [itemDetails.quantity]);
 
   const increaseItemQuantity = () => addItemToCart(itemDetails);
-  const decreaseItemQuantity = () => removeItemFromCart(itemDetails.id);
+  const decreaseItemQuantity = () => removeItemFromCart(_id);
 
   return (
     <>
       <tr>
         <td className="product-thumbnail">
           <Link to={`/store/${_id}`}>
-            <img src={images[0].url} alt="item" />
+            <img src={images[0]?.url} alt="item" />
           </Link>
         </td>
         <td className="product-name">
@@ -54,6 +54,7 @@ const CartItem = ({
           <span
             onClick={() => removeCompletelyFromCart(_id)}
             className="remove"
+            style={{ cursor: 'pointer' }}
           >
             <i className="fas fa-trash" />
           </span>

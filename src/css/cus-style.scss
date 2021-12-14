@@ -240,6 +240,41 @@ Default btn CSS
   }
 }
 
+.secondary-btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: rgb(192, 164, 3);
+  color: $white-color;
+  border-radius: 30px;
+  font-size: $font-size;
+  font-weight: bold;
+  transition: $transition;
+  position: relative;
+  z-index: 1;
+  margin-left: 15px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgb(5, 170, 5);
+    z-index: -1;
+    transition: $transition;
+    border-radius: 30px;
+  }
+
+  &:hover {
+    &::before {
+      height: 100%;
+    }
+    color: $white-color;
+  }
+}
+
 /*================================================
 Section Title CSS
 =================================================*/

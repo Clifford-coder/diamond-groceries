@@ -5,7 +5,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MobileNav = ({ user, setMobileNav }) => {
+const MobileNav = ({ user, setMobileNav, cartItemsNum }) => {
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'Store', to: '/store' },
@@ -51,7 +51,7 @@ const MobileNav = ({ user, setMobileNav }) => {
               background: 'white',
             }}
           >
-            0
+            {cartItemsNum}
           </span>
         </Link>
       </div>

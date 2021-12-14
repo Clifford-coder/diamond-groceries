@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/small-logo.png';
+import { CartContext } from '../../context/Cart';
 import MobileNav from './mobile';
 
 const Navbar = () => {
   const location = useLocation();
   const [showMobileNav, setMobileNav] = useState(false);
+  const { cartItems } = useContext(CartContext);
 
   const toggleMobileNav = () => {
     setMobileNav(!showMobileNav);
@@ -93,7 +95,7 @@ const Navbar = () => {
                     <div className="cart-btn">
                       <Link to="/cart">
                         <i className="fas fa-shopping-cart" />
-                        <span>0</span>
+                        <span>{cartItems.length}</span>
                       </Link>
                     </div>
                   </div>
@@ -135,7 +137,13 @@ const Navbar = () => {
         </div>
       </div>
       {/* mobile navigation */}
-      {showMobileNav && <MobileNav user={user} setMobileNav={setMobileNav} />}
+      {showMobileNav && (
+        <MobileNav
+          cartItemsNum={cartItems.length}
+          user={user}
+          setMobileNav={setMobileNav}
+        />
+      )}
     </>
   );
 };
