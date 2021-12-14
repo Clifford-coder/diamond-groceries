@@ -12,18 +12,21 @@ const CartContextProvider = ({ children }) => {
 
   // add to cart
   const addItemToCart = (product) => {
-    const temp = [...cartItems];
     // const userId = user?.user?.id || null;
-    const productIndex = cartItems.findIndex((item) => item.id === product.id);
+    const productIndex = cartItems.findIndex((item) => {
+      return item.product?.id === product.product?.id;
+    });
     // increment the quantity if the same
-    if (productIndex !== -1) temp[productIndex].quantity += 1;
-    else
-      temp.push({
+    if (productIndex !== -1) cartItems[productIndex].quantity += 1;
+    else {
+      cartItems.push({
         product,
         quantity: 1,
         userId: user?.user?.id ? user.user.id : null,
       });
-    setCartItems(temp);
+    }
+
+    setCartItems([...cartItems]);
   };
 
   // reduce item quantity in cart

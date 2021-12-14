@@ -63,13 +63,17 @@ const Store = () => {
         return product;
       }
     });
-    setFilteredProduct(newProducts);
+    setFilteredProduct([newProducts]);
   };
 
-  if (error)
-    return toast.error(
-      'Oops! There was an error in getting products, try again'
+  if (error) {
+    toast.error('Oops! There was an error in getting products, try again');
+    return (
+      <h1 style={{ textAlign: 'center', paddingBottom: '0.9rem' }}>
+        No Products found
+      </h1>
     );
+  }
 
   return (
     <>
