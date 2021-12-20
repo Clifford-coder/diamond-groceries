@@ -20,12 +20,12 @@ const MobileNav = ({ user, setMobileNav, cartItemsNum }) => {
           <Link to={nav.to}>{nav.name}</Link>
         </div>
       ))}
-      {!user?.user && !user?.jwt ? (
+      {!user?.isAuthenticated && !user?.jwt ? (
         <div onClick={() => setMobileNav(false)}>
           <Link to="/sign-up">Sign Up</Link>
         </div>
       ) : null}
-      {!user?.user ? (
+      {!user?.isAuthenticated ? (
         <div onClick={() => setMobileNav(false)}>
           <Link to="/login">Sign In</Link>
         </div>

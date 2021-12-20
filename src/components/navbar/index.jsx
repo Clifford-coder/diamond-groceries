@@ -64,14 +64,14 @@ const Navbar = () => {
                       Store
                     </Link>
                   </li>
-                  {!user?.user && !user?.jwt ? (
+                  {!user?.isAuthenticated && !user?.jwt ? (
                     <li className="nav-item">
                       <Link to="/sign-up" className="nav-link">
                         Sign Up
                       </Link>
                     </li>
                   ) : null}
-                  {!user?.user ? (
+                  {!user?.isAuthenticated ? (
                     <li className="nav-item">
                       <Link to="/login" className="nav-link">
                         Sign In

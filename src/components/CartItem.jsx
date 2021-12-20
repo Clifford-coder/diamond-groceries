@@ -33,7 +33,7 @@ const CartItem = ({
           </Link>
         </td>
         <td className="product-name">
-          <a href="shop-details.html">{title}</a>
+          <Link to={`/store/${_id}`}>{title}</Link>
         </td>
         <td className="product-price">
           <span className="unit-amount">{`GH₵ ${unitPrice}`}</span>

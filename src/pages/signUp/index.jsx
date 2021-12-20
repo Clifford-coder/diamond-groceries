@@ -2,7 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader';
 
@@ -52,7 +52,7 @@ const index = () => {
         const { jwt } = response.data;
         // save the jwt in the local storage
         const valToStoreInLocalStorage = {
-          user: null,
+          isAuthenticated: false,
           jwt,
         };
         localStorage.setItem(
@@ -64,6 +64,7 @@ const index = () => {
         // todo: navigate to whever he was expect for if he was at the auth pages, then send him to store
         history.push('/store');
       } catch (error) {
+        console.log('error sata ---', error.data);
         toast.error('Unable to sign up, please try again!');
       }
     },
@@ -189,6 +190,13 @@ const index = () => {
                     <span>{errors.confirmPassword}</span>
                   </div>
                 ) : null}
+              </div>
+              <div className="wrapper">
+                <div className="lost-your-password">
+                  <Link to="/login" className="lost-your-password">
+                    Have an account already? Sign in
+                  </Link>
+                </div>
               </div>
               <button type="submit" className="default-btn">
                 {isSubmitting ? (

@@ -184,6 +184,7 @@ Default btn CSS
   position: relative;
   z-index: 1;
   overflow: hidden;
+  cursor: pointer;
 
   &::before {
     content: '';

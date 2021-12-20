@@ -86,9 +86,11 @@ const Cart = () => {
                   <span>{`GH₵ ${subTotal}`}</span>
                 </li>
               </ul>
-              <Link to="/checkout" className="secondary-btn">
-                Proceed to Checkout
-              </Link>
+              {cartItems.length !== 0 && (
+                <Link to="/checkout" className="secondary-btn">
+                  Proceed to Checkout
+                </Link>
+              )}
             </div>
           </div>
         </div>

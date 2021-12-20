@@ -35,10 +35,10 @@ const index = () => {
           identifier: values.email,
           password: values.password,
         });
-        const { jwt, user } = response.data;
+        const { jwt } = response.data;
         // save the jwt in the local storage
         const valToStoreInLocalStorage = {
-          user,
+          isAuthenticated: true,
           jwt,
         };
         localStorage.setItem(
@@ -51,7 +51,9 @@ const index = () => {
         // todo: navigate to whever he was expect for if he was at the auth pages, then send him to store
         history.push('/store');
       } catch (error) {
-        toast.error('Unable to log in, please try again!');
+        toast.error(
+          'Unable to log in, Check your credentials and please try again!'
+        );
       }
     },
   });
