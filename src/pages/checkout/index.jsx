@@ -18,6 +18,8 @@ const checkout = () => {
       fullname: '',
       email: '',
       phone: '',
+      paymentOption: '',
+      deliveryOption: '',
     });
 
   // user details form validation schema
